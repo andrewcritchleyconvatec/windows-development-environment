@@ -17,6 +17,11 @@ node default {
     ensure  => present,
   }
   
+    # need to add this path in order to have ssh in the PATH
+  windows_path { 'D:\Dev\PathTools':
+    ensure  => present,
+  }
+  
   class { 'windows_autoupdate': 
     no_auto_reboot_with_logged_on_users => '1' 
   }
